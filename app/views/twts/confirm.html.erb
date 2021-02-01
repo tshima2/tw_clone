@@ -1,0 +1,7 @@
+<h3>以下の内容で登録してよろしいですか？</h3>
+<%= form_with(model: @twt, local: true, url: twts_path) do |form| %>
+<%= form.hidden_field :content %>
+<p>本文:<%= @twt.content %></p>
+<%= form.submit  "登録する" %>
+<%= form.submit  "戻る",  name: 'back' %>
+<% end %>

@@ -1,0 +1,57 @@
+<script>
+  window.onload=function(){
+      _MSG_='いまどうしてる？';
+      ta=document.getElementById('twt_content');
+      ta.focus();       
+      ta.addEventListener('focus', function(e) {
+          if(ta.textContent==_MSG_) ta.textContent='';
+      });
+      ta.addEventListener('blur', function(e){
+          if(ta.textContent=='') ta.textContent=_MSG_;
+      });
+      cb=document.getElementById('close_button');
+      cb.addEventListener('click', function(e){
+          open('about:blank', '_self').close();
+      });
+  };
+</script>
+
+<%= form_with(model: @twt, local: true, url: confirm_twts_path) do |form| %>        
+<header>
+  <div id="close_button">×</div>
+  <p><%= notice %></p>
+  <% if @twt.errors.any? %>
+  <div id="error_explanation">
+    <h2><%= @twt.errors.count %>件のエラーがあります</h2>
+    <ul>
+      <% @twt.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+      <% end %>      	  
+    </ul>
+  </div>
+  <% end %>      
+</header>
+<hr>
+
+<table border="0">
+  <tr>
+    <td valign="top">
+      <!-- <img src="./images/shima.png" witdh="24" height="48" class="profile_icon"></img>-->
+      <%= image_tag 'shima.png', class: 'profile_icon' %>
+    </td>
+    <td>
+      <!-- <textarea cols="40" rows="4" id="twt_content" name="content" placeholder="いまどうしてる？" value="" maxlength=140></textarea>-->
+      <%= form.text_area(:content, size: "40x4", value: "いまどうしてる？") %>
+    </td>
+  </tr>
+  <tr>
+    <td></td>
+    <td align="right">
+      <hr>
+      <!-- <div id="submit_button">ツイートする</div>-->      
+      <%= form.submit("ツイートする") %>
+    </td>
+  </tr>
+</table>
+
+<% end %>

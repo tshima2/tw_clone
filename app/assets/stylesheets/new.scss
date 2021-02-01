@@ -1,0 +1,49 @@
+html body{
+  margin: 0 auto;
+  padding: 0 auto;
+  font-size: 1rem;  //16px
+}
+
+.profile_icon {
+    width: auto;
+    height: 80%;
+}
+
+#close_button {
+  width: 40px;
+  height: 48px;
+  background-color: #ffffff;
+  color: #1DA1F2;  
+  border-radius: 50px;
+  margin-left: 0;
+  padding-left: 12px;
+  font-size: 2rem;
+}
+
+#close_button:hover{
+  background-color: lightblue;  
+}
+
+#twt_content {
+  font-size: 2rem;
+  border: none;
+}
+
+#submit_button {
+  width: 140px;
+  height: 36px;
+  border-radius: 20px;
+  margin-top: 10px;
+  padding-top: 10px;
+  padding-right: 32px;
+  
+  font-size: 1rem;
+  color: #FFFFFF;
+  background-color: #1DA1F2;
+  
+  opacity: 0.6;
+}
+
+#submit_button:hover{
+  opacity: 1.0;
+}
