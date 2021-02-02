@@ -11,8 +11,9 @@ class TwtsController < ApplicationController
 
   def update
     if @twt.update(_twt_params)
-      redirect_to twts_path, notice: "ツイートを編集しました!"
+      redirect_to edit_twt_path, notice: "ツイートを編集しました!"
     else
+      notice='保存に失敗しました'      
       render :edit
     end
   end
