@@ -1,0 +1,47 @@
+<div class="wrapper">
+  <aside class="side_menu">
+    <ul class="menu_list">
+      <li>
+        <a href="#">
+	  <%= image_tag 'home.png', class:'home_icon' %>
+        </a>
+      </li>            
+      <li>
+        <a href="#">
+	  <%= image_tag 'tweet.png', class:'tweet_icon' %>	  
+        </a>
+      </li>
+      <li>
+        <a href="#">
+	  <%= image_tag 'shima.png', class:'profile_icon2' %>	  	  
+        </a>
+      </li>
+    </ul>
+  </aside>
+  <aside class="dummy_menu"><BR></aside>
+  <article class="tweets">
+    <div class="tweet_header">
+      <h1>Tatsurou SHIMA</h1>
+      <p><%= @twts.count %>件のツイート</p>         
+    </div>
+    <div class="tweet_box_wrapper">
+      <% @twts.each do |twt| %>
+      <div class="tweet_box">
+        <span class="box_menu">...</span>
+        <ul class="box_menu_list">
+          <li class="box_item">
+	          <%= link_to ('<span class="ui-icon ui-icon-circle-arrow-e"></span>編集').html_safe, edit_twt_path(twt.id) %>
+	        </li>
+          <li class="box_item">
+	          <%= link_to ('<span class="ui-icon ui-icon ui-icon-trash"></span>削除').html_safe, twt_path(twt.id), method: :delete %>
+	        </li>
+        </ul>
+        <div class="box_content"><%= twt.content %></div>
+      </div>
+      <% end %>
+    </div>
+  </article>
+</div>
+
+<%= javascript_include_tag "index2.js" %>
+

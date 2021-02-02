@@ -1,4 +1,8 @@
 class TwtsController < ApplicationController
+  def index
+    @twts = Twt.all
+  end
+
   def create
     @twt = Twt.new(_twt_params)
     if params[:back]
