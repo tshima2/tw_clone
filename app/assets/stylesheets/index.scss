@@ -50,7 +50,6 @@ body {
 .tweet_box{
   width: 480px;
   height: 64px;
-  /*   background-color: gray; */
   margin-top: 10px;
   postion: relative;
 }
@@ -61,38 +60,14 @@ body {
   padding: 10px;  
 }
 
-.home_icon {
-  margin-left: 12px;
-  border-radius: 28px;
-  width: 64px;
-  height: auto;
-}
-
-.home_icon:hover {
-  /*   background-color: lightblue;     */
-}
-
 .tweet_icon {
   width: 84px;
   height: auto;    
   margin-left: 0;
-  /*   border-radius: 48px;     */
 }
 .tweet_icon:hover {
   /*   background-color: lightblue;     */
 }
-
-.profile_icon2 {
-  width: 64px;
-  height: auto;
-  margin-left: 8px;
-  border-radius: 28px;
-}
-
-.profile_icon:hover {
-  /*   background-color: lightblue;     */
-}
-
 
 .box_menu{
   display: inline-block;

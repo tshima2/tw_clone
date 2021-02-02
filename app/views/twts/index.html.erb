@@ -1,21 +1,7 @@
 <div class="wrapper">
   <aside class="side_menu">
     <ul class="menu_list">
-      <li>
-        <a href="#">
-	  <%= image_tag 'home.png', class:'home_icon' %>
-        </a>
-      </li>            
-      <li>
-        <a href="#">
-	  <%= image_tag 'tweet.png', class:'tweet_icon' %>	  
-        </a>
-      </li>
-      <li>
-        <a href="#">
-	  <%= image_tag 'shima.png', class:'profile_icon2' %>	  	  
-        </a>
-      </li>
+      <li><a href='/twts/new'><%= image_tag 'tweet.png', class: 'tweet_icon' %></a></li>
     </ul>
   </aside>
   <aside class="dummy_menu"><BR></aside>
@@ -33,7 +19,7 @@
 	          <%= link_to ('<span class="ui-icon ui-icon-circle-arrow-e"></span>編集').html_safe, edit_twt_path(twt.id) %>
 	        </li>
           <li class="box_item">
-	          <%= link_to ('<span class="ui-icon ui-icon ui-icon-trash"></span>削除').html_safe, twt_path(twt.id), method: :delete %>
+	          <%= link_to ('<span class="ui-icon ui-icon ui-icon-trash"></span>削除').html_safe, twt_path(twt.id), method: :delete, data: { confirm: '本当に削除していいですか？'} %>
 	        </li>
         </ul>
         <div class="box_content"><%= twt.content %></div>

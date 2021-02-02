@@ -1,7 +1,7 @@
 
-<%= form_with( model: @twt, local: true, url: choose_new_or_edit[:uri] ) do |form| %>        
+<%= form_with( model: @twt, local: true, url: choose_new_or_edit[:uri] ) do |form| %>
 <header>
-  <a href="/twts"><%= image_tag 'home.png', class:'home_icon' %></a>
+  <a href="/twts"><%= image_tag 'home.png', class:'home_icon' %></a>  
   <p><%= notice %></p>
   <% if @twt.errors.any? %>
   <div id="error_explanation">
@@ -23,15 +23,16 @@
       <%= image_tag 'shima.png', class: 'profile_icon' %>
     </td>
     <td>
-      <%= form.text_area(:content, size: "40x4", placeholder: "いまどうしてる？") %>
+      <%= form.text_area(:content, size: "40x4") %>
     </td>
   </tr>
   <tr>
     <td></td>
     <td align="right">
       <hr>
-      <%= form.submit( choose_new_or_edit[:label] ) %>
+      <%= form.submit( choose_new_or_edit[:label]) %>
     </td>
   </tr>
 </table>
 <% end %>
+
